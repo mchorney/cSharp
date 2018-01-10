@@ -1,0 +1,8 @@
+C:\Users\m.chorney-pc\Desktop\New_project\collectionsPractice\bin\Debug\netcoreapp1.1\collectionsPractice.deps.json
+C:\Users\m.chorney-pc\Desktop\New_project\collectionsPractice\bin\Debug\netcoreapp1.1\collectionsPractice.runtimeconfig.json
+C:\Users\m.chorney-pc\Desktop\New_project\collectionsPractice\bin\Debug\netcoreapp1.1\collectionsPractice.runtimeconfig.dev.json
+C:\Users\m.chorney-pc\Desktop\New_project\collectionsPractice\bin\Debug\netcoreapp1.1\collectionsPractice.dll
+C:\Users\m.chorney-pc\Desktop\New_project\collectionsPractice\bin\Debug\netcoreapp1.1\collectionsPractice.pdb
+C:\Users\m.chorney-pc\Desktop\New_project\collectionsPractice\obj\Debug\netcoreapp1.1\collectionsPractice.AssemblyInfo.cs
+C:\Users\m.chorney-pc\Desktop\New_project\collectionsPractice\obj\Debug\netcoreapp1.1\collectionsPractice.dll
+C:\Users\m.chorney-pc\Desktop\New_project\collectionsPractice\obj\Debug\netcoreapp1.1\collectionsPractice.pdb

@@ -1,0 +1,8 @@
+C:\Users\m.chorney-pc\Desktop\New_project\Human\bin\Debug\netcoreapp1.1\Human.deps.json
+C:\Users\m.chorney-pc\Desktop\New_project\Human\bin\Debug\netcoreapp1.1\Human.runtimeconfig.json
+C:\Users\m.chorney-pc\Desktop\New_project\Human\bin\Debug\netcoreapp1.1\Human.runtimeconfig.dev.json
+C:\Users\m.chorney-pc\Desktop\New_project\Human\bin\Debug\netcoreapp1.1\Human.dll
+C:\Users\m.chorney-pc\Desktop\New_project\Human\bin\Debug\netcoreapp1.1\Human.pdb
+C:\Users\m.chorney-pc\Desktop\New_project\Human\obj\Debug\netcoreapp1.1\Human.AssemblyInfo.cs
+C:\Users\m.chorney-pc\Desktop\New_project\Human\obj\Debug\netcoreapp1.1\Human.dll
+C:\Users\m.chorney-pc\Desktop\New_project\Human\obj\Debug\netcoreapp1.1\Human.pdb
