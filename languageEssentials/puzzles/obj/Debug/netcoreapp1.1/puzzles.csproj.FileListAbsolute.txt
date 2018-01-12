@@ -1,0 +1,8 @@
+C:\Users\m.chorney-pc\Desktop\New_project\puzzles\bin\Debug\netcoreapp1.1\puzzles.deps.json
+C:\Users\m.chorney-pc\Desktop\New_project\puzzles\bin\Debug\netcoreapp1.1\puzzles.runtimeconfig.json
+C:\Users\m.chorney-pc\Desktop\New_project\puzzles\bin\Debug\netcoreapp1.1\puzzles.runtimeconfig.dev.json
+C:\Users\m.chorney-pc\Desktop\New_project\puzzles\bin\Debug\netcoreapp1.1\puzzles.dll
+C:\Users\m.chorney-pc\Desktop\New_project\puzzles\bin\Debug\netcoreapp1.1\puzzles.pdb
+C:\Users\m.chorney-pc\Desktop\New_project\puzzles\obj\Debug\netcoreapp1.1\puzzles.AssemblyInfo.cs
+C:\Users\m.chorney-pc\Desktop\New_project\puzzles\obj\Debug\netcoreapp1.1\puzzles.dll
+C:\Users\m.chorney-pc\Desktop\New_project\puzzles\obj\Debug\netcoreapp1.1\puzzles.pdb
