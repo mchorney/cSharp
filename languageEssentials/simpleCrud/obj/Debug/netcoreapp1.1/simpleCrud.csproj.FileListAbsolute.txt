@@ -1,0 +1,4 @@
+C:\Users\m.chorney-pc\Desktop\New_project\simpleCrud\bin\Debug\netcoreapp1.1\simpleCrud.deps.json
+C:\Users\m.chorney-pc\Desktop\New_project\simpleCrud\bin\Debug\netcoreapp1.1\simpleCrud.runtimeconfig.json
+C:\Users\m.chorney-pc\Desktop\New_project\simpleCrud\bin\Debug\netcoreapp1.1\simpleCrud.runtimeconfig.dev.json
+C:\Users\m.chorney-pc\Desktop\New_project\simpleCrud\obj\Debug\netcoreapp1.1\simpleCrud.AssemblyInfo.cs

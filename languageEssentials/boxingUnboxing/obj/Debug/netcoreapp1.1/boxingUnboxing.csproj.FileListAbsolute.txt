@@ -1,0 +1,8 @@
+C:\Users\m.chorney-pc\Desktop\New_project\boxingUnboxing\bin\Debug\netcoreapp1.1\boxingUnboxing.deps.json
+C:\Users\m.chorney-pc\Desktop\New_project\boxingUnboxing\bin\Debug\netcoreapp1.1\boxingUnboxing.runtimeconfig.json
+C:\Users\m.chorney-pc\Desktop\New_project\boxingUnboxing\bin\Debug\netcoreapp1.1\boxingUnboxing.runtimeconfig.dev.json
+C:\Users\m.chorney-pc\Desktop\New_project\boxingUnboxing\bin\Debug\netcoreapp1.1\boxingUnboxing.dll
+C:\Users\m.chorney-pc\Desktop\New_project\boxingUnboxing\bin\Debug\netcoreapp1.1\boxingUnboxing.pdb
+C:\Users\m.chorney-pc\Desktop\New_project\boxingUnboxing\obj\Debug\netcoreapp1.1\boxingUnboxing.AssemblyInfo.cs
+C:\Users\m.chorney-pc\Desktop\New_project\boxingUnboxing\obj\Debug\netcoreapp1.1\boxingUnboxing.dll
+C:\Users\m.chorney-pc\Desktop\New_project\boxingUnboxing\obj\Debug\netcoreapp1.1\boxingUnboxing.pdb
