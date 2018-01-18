@@ -1,0 +1,63 @@
+@model loginReg.Models.User
+@using loginReg
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="jumbotron">
+    <h1>Welcome to The Internet</h1>
+    <h3>Show us your information, we'll show you ours.</h3>
+</div>
+
+
+    <div class="col-xs-12 errors">
+        <h1 class="errors">@if(@TempData["errors"] != "" ){
+            <span>@TempData["errors"]</span>
+        }
+        </h1>
+    </div>
+
+
+
+<div class="col-xs-6 register">
+    <form asp-controller="Home" asp-action="register" method="post" class="form">
+        <h1><button type="submit" class="btn btn-alert">Register</button></h1>
+        <div class="form-group">
+            <span asp-validation-for="firstName"></span>
+            <label asp-for="firstName"></label>
+            <input class="form-control" asp-for="firstName">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="lastName"></span>
+            <label asp-for="lastName"></label>
+            <input class="form-control" asp-for="lastName">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="email"></span>
+            <label asp-for="email"></label>
+            <input class="form-control" asp-for="email">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="password"></span>
+            <label asp-for="password"></label>
+            <input class="form-control" asp-for="password">
+        </div>
+        <div class="form-group">
+            <span asp-validation-for="passwordConfirmation"></span>
+            <label asp-for="passwordConfirmation"></label>
+            <input class="form-control" asp-for="passwordConfirmation">
+        </div>
+    </form>
+</div>
+
+<div class="col-xs-6 login">
+    <form asp-controller="Home" asp-action="login" method="post" class="form">
+        <h1><button type="submit" class="btn btn-alert">Login</button></h1>
+        <div class="form-group">
+            <label asp-for="email"></label>
+            <input class="form-control" name="email">
+        </div>
+        <div class="form-group">
+            <label asp-for="password"></label>
+            <input class="form-control" name="password" type="password">
+        </div>
+    </form>
+</div>

@@ -1,0 +1,17 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.button {
+    float: right;
+    width: 100px;
+    color: black;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.comment {
+    float: right;
+    text-align: right;
+}

@@ -1,0 +1,37 @@
+<div class="jumbotron">
+    <a href="/logout"><button class="btn btn-alert button">LogOut</button></a>
+    <h1>The Wall</h1> 
+    <h3>Where opinions are like assholes.</h3> 
+</div>
+
+<form asp-controller="Home" asp-action="postMsg" method="post" class="form">
+    <label for = "message">Post a Message:</label>
+    <textarea class="form-control" name="post" rows="4" id="message"></textarea>
+    <button type="submit" class="btn btn-alert button">Post</button>
+</form>
+
+
+<div class="col-xs-12">
+    @foreach (var msg in @ViewBag.Messages) {
+        <hr>
+        <div class="col-xs-12 message">
+        <h3>@msg["fullName"] said on  - @msg["date"] --- <span style="font-style: italic">@msg["message"]</span></h3>
+        
+        </div>
+    @foreach (var comment in @ViewBag.Comments) {
+        @if(@msg["id"] == @comment["message_id"]){
+                        <div class="col-xs-8 comment">
+                            <h5>@comment["fullName"] commented on - @comment["date"] - at @comment["time"] --- @comment["comment"]</h5>
+                        </div>
+                    }
+    }
+    
+    <form asp-controller="Home" asp-action="postComment" method="post" class="form">
+    
+    <textarea class="form-control" name="comment" rows="1" id="comment" placeholder="Leave a comment"></textarea>
+    <button type="submit" class="btn btn-alert button">Comment</button>
+    <input type="hidden" name="msgID" value="@msg["id"]">
+    </form>
+    }
+    
+</div>
