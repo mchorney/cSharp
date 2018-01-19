@@ -1,0 +1,13 @@
+<div class="jumbotron">
+    <h1>Here are the awesome quotes!</h1>
+    <div class="col-sm-12">
+        <a href="/"><button id="home" class="btn btn-default">Home</button></a>
+    </div>
+</div> 
+
+@foreach (var quote in ViewBag.Quotes) {
+    <h3>@quote["quote"]</h3>
+    <h5>--@quote["name"] --at-- @quote["created_date"]</h5>
+    <a href="/delete/@quote["id"]"><button>DELETE</button></a>
+    <hr>
+}

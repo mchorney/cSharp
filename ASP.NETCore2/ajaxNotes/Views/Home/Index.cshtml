@@ -1,0 +1,71 @@
+<div class="jumbotron">
+    <h1>Ajax Notes</h1>
+    <h3>And that's why you always leave a note.</h3>
+</div>
+
+<div class="col-xs-12" id="noteArea">
+    @{
+    
+        if(ViewBag.notes.Count == 0)
+        {
+            <h4 id="noNotes">No notes is good notes.</h4>
+        }
+
+        foreach(Dictionary<string, object> note in @ViewBag.notes)
+        {
+            <div id='@("container" + @note["id"])'>
+                <p class="title">
+                    @note["title"] - 
+                    <a onclick = 'delNote(@note["id"]);'><button class="btn btn-danger">Delete</button></a>
+                </p>
+                <textarea id='@note["id"]' placeholder="Note to self...">@note["note"]</textarea>
+                <br>
+                <hr>
+            </div>
+        }
+    }
+</div>
+<div class="col-xs-12">
+    <input type="text" id="newNoteTitle" placeholder="New Note Title">
+</div>
+<div class="col-xs-12">
+    <button id="addNote" class="btn btn-success">Add Note</button>
+</div>
+
+@section Scripts {
+    <script>
+
+        $(document).on("blur", "textarea", function(){
+            var newNote = $("#" + this.id).val();
+
+            $.post("/updateNote", { "id" : this.id, "note" : newNote }, function(res){
+
+            });
+        });
+
+        $("#addNote").click(function(){
+
+            $.post("/addNote", { "title" : $("#newNoteTitle").val() }, function(res){
+                var html = "<div id='container" + res + "'><p>" + $("#newNoteTitle").val() + " - <a onclick='delNote(" + res + ");'><button class='btn btn-danger'>Delete</button></a></p><textarea placeholder='Note to self...' id=" + res + "></textarea><hr></div>";
+                console.log(html);
+                $("#noteArea").prepend(html);
+                $("#noNotes").hide();
+                $("#newNoteTitle").val("");
+            }, "JSON" );
+
+        });
+
+        function delNote(id)
+        {
+            $.post("/delete", {"ID" : id }, function (res)
+            {
+                console.log(res);
+                $("#container" + id).hide();
+            });
+
+            return false;
+        }
+
+
+    </script>
+}

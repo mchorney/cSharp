@@ -1,0 +1,31 @@
+<div class="jumbotron">
+    <h1>Welcome to QuotingDojo</h1>
+</div>
+
+<form class="form-horizontal" action="/addQuote" method="post">
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="name">Name:</label>
+        <div class="col-sm-10">
+            <input type="name" class="form-control" id="name" name="name" placeholder="Enter name">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="quote">Your quote: </label>
+        <div class="col-sm-10">
+            <textarea class="form-control" id="quote" placeholder="Enter quote" name="quote"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group"> 
+        <div class="col-sm-12">
+            <button id="submit" type="submit" class="btn btn-default">Add Quote</button>
+        </div>
+    </div>
+</form>
+
+<div class="form-group">
+    <div class="col-sm-12">
+        <a href="/quotes"><button id="skip" class="btn btn-default">Skip to Quotes</button></a>
+    </div>
+</div> 

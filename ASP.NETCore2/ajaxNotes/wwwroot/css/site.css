@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+textarea {
+    width: 80%;
+}
+
+hr {
+    height: 2px;
+    background-color: #7C838A
+}
+
+textarea {
+    background-color: lightgray;
+    box-shadow: 3px 3px;
+}
+
+#newNoteTitle {
+    width: 400px;
+    margin: 20px;
+    box-shadow: 2px 2px;
+}
