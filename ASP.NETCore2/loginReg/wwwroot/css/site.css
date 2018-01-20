@@ -1,0 +1,14 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    color: white;
+}
+
+.container {}
+
+.errors {
+    float: none;
+    text-align: center;
+    margin-left: auto;
+    color: red;
+}
