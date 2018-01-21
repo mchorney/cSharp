@@ -33,7 +33,7 @@ namespace theWall.Controllers
             {
                 List<Dictionary<string, object>> isUser = DbConnector.Query($"SELECT * FROM users WHERE email = '{newUser.email}'");
                 if(isUser.Count == 0){
-                    DbConnector.Execute($"INSERT INTO users(firstName, lastName, email, password) VALUES('{newUser.firstName}', '{newUser.lastName}', '{newUser.email}', '{newUser.password}')");
+                    DbConnector.Execute($"INSERT INTO users(first_Name, last_Name, email, password) VALUES('{newUser.firstName}', '{newUser.lastName}', '{newUser.email}', '{newUser.password}')");
                     List<Dictionary<string, object>> loggedIn = DbConnector.Query("SELECT LAST_INSERT_ID()");
                     HttpContext.Session.SetInt32("loggedIn", Convert.ToInt32(loggedIn[0]["LAST_INSERT_ID()"]));
                     return Redirect("home");
@@ -72,11 +72,11 @@ namespace theWall.Controllers
                 return View("index");
             }
             else {
-            List<Dictionary<string, object>> allMessages = DbConnector.Query("SELECT concat(firstName, ' ', lastName) fullName, date_format(messages.created_at, '%M %D %Y') as date, message, messages.created_at, messages.id FROM messages join users on user_id=users.id order by created_at DESC");
+            List<Dictionary<string, object>> allMessages = DbConnector.Query("SELECT concat(first_Name, ' ', last_Name) fullName, date_format(messages.created_at, '%M %D %Y') as date, message, messages.created_at, messages.id FROM messages join users on user_id=users.id order by created_at DESC");
 
             ViewBag.Messages = allMessages;
 
-            List<Dictionary<string, object>> allComments = DbConnector.Query("SELECT concat(firstName, '', lastName) fullName, date_format(comments.created_at, '%M %D %Y') as date, time_format(comments.created_at, '%r') as time, comments.created_at, comment, message_id from users join comments on users.id=user_id order by created_at ASC");
+            List<Dictionary<string, object>> allComments = DbConnector.Query("SELECT concat(first_Name, '', last_Name) fullName, date_format(comments.created_at, '%M %D %Y') as date, time_format(comments.created_at, '%r') as time, comments.created_at, comment, message_id from users join comments on users.id=user_id order by created_at ASC");
 
             ViewBag.Comments = allComments;
 
