@@ -1,0 +1,19 @@
+<div id="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>All Reviews</h1>
+        </div>
+        <div class="col-md-4">
+            <a href="/"><h1>Go back</h1></a>
+        </div>
+    </div>
+    @foreach(var review in @ViewBag.Reviews){
+        <div class="reviewContainer">
+            <hr>
+            <h4>@review.Restaurant gets **@review.Rating Stars**</h4>
+            <h4>Reviewer: @review.Reviewer, @review.VisitDate</h4>
+            <h2>-@review.TheReview</h2>
+            <hr>
+        </div>
+    }
+</div>

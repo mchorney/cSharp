@@ -1,0 +1,41 @@
+@model RESTauranter.Models.Review
+@using RESTauranter
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>Write a new review:</h1>
+
+<div class="col-xs-8">
+<form asp-controller="Home" asp-action="processForm" method="post" class="form">
+    <span asp-validation-for="Reviewer"></span>
+    <label asp-for="Reviewer">Reviewer Name:</label>
+    <input class="form-control" asp-for="Reviewer" autofocus>
+    
+    <br>
+    <span asp-validation-for="Restaurant"></span>
+    <label asp-for="Restaurant">Restaurant Name:</label>
+    <input class="form-control" asp-for="Restaurant">
+
+    <br>
+    <span asp-validation-for="TheReview"></span>
+    <label asp-for="TheReview">Review:</label>
+    <textarea class="form-control" asp-for="TheReview" rows="6"></textarea>
+    
+    <br>
+    <span asp-validation-for="VisitDate"></span>
+    <label asp-for="VisitDate">Date of Visit:</label>
+    <input class="form-control" type="date" asp-for="VisitDate">
+
+    <br>
+    <span asp-validation-for="Rating"></span>
+    <label asp-for="Rating">Stars</label>
+    <select asp-for="Rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+        
+    <button type="submit" class="btn btn-alert button" style="float: right; margin-top: 10px;">Tell The World!</button>
+</form>
+</div>
