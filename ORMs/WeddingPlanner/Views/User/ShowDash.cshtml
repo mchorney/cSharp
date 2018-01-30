@@ -1,0 +1,53 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/dashboard">Wedding Planner</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/dashboard">Home</a></li>
+            <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Wedding</th>
+                    <th>Date</th>
+                    <th>Guest Count</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            @{
+                foreach (var wedding in @ViewBag.Weddings)
+                {
+                    <tr>
+                        <td><a href="wedding/show/@wedding.WeddingId">@wedding.WedderOne & @wedding.WedderTwo</a></td>
+                        <td>@wedding.Date.ToString("MMMM dd, yyyy")</td>
+                        <td>@wedding.Guests.Count</td>
+                        @if(@wedding.UserId == (int)TempData["UserId"])
+                        {
+                            <td><a href="/wedding/cancel/@wedding.WeddingId">Delete</a></td>
+                        }
+                        else if(@ViewBag.Guest == true)
+                        {
+                            <td><a href="/wedding/unrsvp/@wedding.WeddingId">Un-RSVP</a></td>
+                        }
+                        else
+                        {
+                            <td><a href="/wedding/rsvp/@wedding.WeddingId">RSVP</a></td>
+                        }
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+    <a class="btn btn-primary" href="wedding/add" role="button">Add Wedding</a>
+</div>
