@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model BankAccounts.Models.UserViewModel
+<form asp-controller="User" asp-action="Register" method="post">
+    <label asp-for="RegisterUser.FirstName"></label>
+    <input asp-for="RegisterUser.FirstName"/>
+    <span asp-validation-for="RegisterUser.FirstName"></span>
+    <br>
+    <label asp-for="RegisterUser.LastName"></label>
+    <input asp-for="RegisterUser.LastName"/>
+    <span asp-validation-for="RegisterUser.LastName"></span>
+    <br>
+    <label asp-for="RegisterUser.Email"></label>
+    <input asp-for="RegisterUser.Email"/>
+    <span asp-validation-for="RegisterUser.Email"></span>
+    <span>@ViewBag.EmailExists</span>
+    <br>
+    <label asp-for="RegisterUser.Password"></label>
+    <input asp-for="RegisterUser.Password"/>
+    <span asp-validation-for="RegisterUser.Password"></span>
+    <br>
+    <label asp-for="RegisterUser.PasswordConfirmation"></label>
+    <input asp-for="RegisterUser.PasswordConfirmation"/>
+    <span asp-validation-for="RegisterUser.PasswordConfirmation"></span>
+    <br>
+    <button type="submit">Create New User</button>
+</form>
+<hr>
+<form asp-controller="User" asp-action="Login" method="post">
+    <label asp-for="LoginUser.Email"></label>
+    <input asp-for="LoginUser.Email">
+    <span asp-validation-for="LoginUser.Email"></span>
+    <span>@ViewBag.NoUser</span>
+    <br>
+    <label asp-for="LoginUser.Password"></label>
+    <input asp-for="LoginUser.Password">
+    <span asp-validation-for="LoginUser.Password"></span>
+    <span></span>
+    <br>
+    <button type="submit">Create New User</button>
+</form>

@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model BankAccounts.Models.AccountViewModel
+<h2>Open a new account: </h2>
+<form asp-controller="Account" asp-action="CreateAccount" method="POST">
+    <input type="hidden" value="@TempData["id"]" name="UserId">
+    <label>Account Type</label>
+    <select asp-for="AccountType">
+        <option value=""></option>
+        <option value="Checking">Checking</option>
+        <option value="Savings">Savings</option>        
+    </select>
+    <br>
+    <label>Account Nickname (optional)</label>
+    <input asp-for="AccountNickname">
+    <br>
+    <input type="submit" value="Create Account">
+</form>

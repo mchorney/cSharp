@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h1>Hello, @TempData["UserName"]</h1>
+@{
+    <table class="table">
+        <thead class="thead-default">
+            <tr>
+                <th>Account Name</th>
+                <th>Account Balance</th>                    
+            </tr>
+        </thead>
+    @foreach (var account in @ViewBag.Accounts)
+    {
+        if(@account.AccountNickname == null)
+        {
+            <tbody>
+                <tr>
+                    <td><a href="/account/@account.AccountId">@account.AccountType</a></td>
+                </tr>
+            </tbody>
+        }
+        else
+        {
+            <tbody>
+                <tr>
+                    <td><a href="/account/@account.AccountId">@account.AccountNickname</a></td>
+                </tr>
+            </tbody>
+        }
+    }
+    </table>
+}
+        
+<a href="/account/new">Open a new account</a>

@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model BankAccounts.Models.Transaction
+<h2>Your @ViewBag.AccountType Account Info</h2>
+<p>Account Balance: @ViewBag.AccountBalance</p>
+<form asp-action="Transact" asp-controller="Account" method="POST">
+    <input type="hidden" value="@ViewBag.AccountId" name="AcctId">
+    <input type="hidden" value="@ViewBag.UserId" name="UserId">
+    <label>Deposit/Withdraw: </label>
+    <input asp-for="TransAmount">
+    <span>@TempData["error"]</span>
+    <input type="submit" value="Submit">
+</form>
+<h3>Recent Transactions</h3>
+    <table class="table">
+        <thead class="thead-default">
+            <tr>
+                <td>Amount</td>
+                <td>Date</td>
+                <td>Type</td>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach(var trans in @ViewBag.Transactions)
+        {
+            <tr>
+                <td>$@trans.TransAmount.ToString("0.00")</td>
+                <td>@trans.Date.ToString("MMMM dd, yyyy")</td>
+                @if(@trans.TransAmount < 0)
+                {
+                    string type = "Withdrawal";
+                    <td>@type</td>
+                }
+                else
+                {
+                    string type = "Deposit";
+                    <td>@type</td>
+                }
+            </tr>
+        }
+        </tbody>      
+    </table>
