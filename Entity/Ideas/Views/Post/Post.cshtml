@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Like Status";
+}
+
+<div>
+    <p class="u-pull-right">
+        <a href="/Dashboard">Bright Ideas</a>
+        <a href="/Logout">Logout</a>
+    </p>
+</div>
+
+<div>
+    <h3><a href="/Users/@ViewBag.CurrentPost.UserId">@ViewBag.CurrentPost.Poster.Alias</a> says:</h3>
+    <p>@ViewBag.CurrentPost.Content</p>
+</div>
+
+<hr>
+
+<div>
+    <h5>People who liked this post:</h5>
+    <table>
+        <thead>
+            <th>Alias</th>
+            <th>Name</th>
+        </thead>
+        <tbody>
+            @{
+                foreach(var like in @ViewBag.CurrentPost.Likes) {
+                    <tr>
+                        <td><a href="/Users/@like.UserId">@like.Liker.Alias</a></td>
+                        <td>@like.Liker.Name</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

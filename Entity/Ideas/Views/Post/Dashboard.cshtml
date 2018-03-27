@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+@model BrightIdeas.Models.Post
+
+<div class="row">
+    <p><strong>Hi @ViewBag.CurrentUser.Alias!</strong> <a href="/Logout" class="u-pull-right">Logout</a></p>
+</div>
+
+<div class="row">
+    <div class="ten columns">
+        <form asp-action="AddPost" asp-controller="Post" method="Post">
+            <div class="six columns">
+                <span asp-validation-for="Content"></span>
+                <input asp-for="Content" placeholder="Post something here..." class="u-full-width">
+            </div>
+            <input type="submit" value="Idea!" class="button-primary">
+        </form> 
+    </div>
+</div>
+
+@{
+    foreach(var post in @ViewBag.AllPosts) {
+        <div class="six columns">
+            <p><h3><a href="Users/@post.UserId">@post.Poster.Alias</a> says:</h3>
+            @if(@post.UserId == @ViewBag.UserId) {
+                <a href="Delete/@post.PostId" class="u-pull-right">Delete</a>
+            }</p>
+            <p class="lead">@post.Content</p>
+            <div class="row">
+                <p><a href="Like/@post.PostId">Like</a>   <span class="u-pull-right"><a href="Post/@post.PostId">@post.Likes.Count people</a> like this.</span></p>
+            </div>
+        </div> 
+    }
+}
